@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "GameService";
+
+service GrpcMyGame {
+    rpc GetMyGame (GetMyGameRequest) returns (GrpcMyGameResponse);
+}
+
+message GetMyGameRequest {
+    string userId = 1;
+    string gameId = 2;
+}
+
+
+message GrpcMyGameModel {
+    string userId = 1;
+    string gameId = 2;
+}
+
+message GrpcMyGameResponse {
+    GrpcMyGameModel MyGame = 1;
+}
